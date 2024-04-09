@@ -1,0 +1,24 @@
+<div id="friends-table">
+  <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">First name:</th>
+          <th scope="col">Last name:</th>
+          <th scope="col">Phone:</th>
+          <th scope="col">Email:</th>
+          <th scope="col">Twitter:</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @friends.each do |friend| %>
+      <tr id="<%= dom_id(friend) %>>
+        <td><%= friend.first_name %></td>
+        <td><%= friend.last_name %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.twitter %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -1,21 +1,19 @@
 <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand mr-5" href="#">Friends List</a>
+    <%= link_to "Friends App", root_path, class:"navbar-brand mr-5" %>
     <ul class="navbar-nav mr-auto d-flex flex-row">
       <li class="nav-item active mr-3">
-        <a class="nav-link " href="#">Home <span class="sr-only">(current)</span></a>
+        <%= link_to "Home", root_path, class:"nav-link", id:"index-link"%>
       </li>
       <li class="nav-item mr-3">
-        <a class="nav-link" href="#">Link</a>
+        <%= link_to "About us", home_about_path, class:"nav-link", id:"about-link"%>
       </li>
       <li class="nav-item dropdown mr-3 ">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
+          Friends
         </a>
         <div class="dropdown-menu " aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <%= link_to "Show Friends", friends_path, class:"dropdown-item", id:"show-friends-link"%>
+          <%= link_to "Add Friends", new_friend_path, class:"dropdown-item", id:"add-friends-link"%>
         </div>
       </li>
     </ul>
@@ -25,7 +23,26 @@
     </form>
 </nav>
         
-        
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    var aboutLink = document.getElementById("about-link");
+    var indexLink = document.getElementById("index-link");
+    var showFriendsLink = document.getElementById("show-friends-link");
+    var aboutFriendsLink = document.getElementById("about-friends-link");
+    aboutLink.addEventListener("click", function(event) {
+      event.stopPropagation();
+    });
+    indexLink.addEventListener("click", function(event) {
+      event.stopPropagation();
+    });
+    showFriendsLink.addEventListener("click", function(event) {
+      event.stopPropagation();
+    });
+    aboutFriendsLink.addEventListener("click", function(event) {
+      event.stopPropagation();
+    });
+  });
+</script>      
         
         
         
