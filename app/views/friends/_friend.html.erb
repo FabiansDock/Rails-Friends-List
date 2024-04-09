@@ -1,5 +1,5 @@
 <div id="friends-table">
-  <table class="table">
+  <table class="table table-hover">
       <thead class="thead-dark">
         <tr>
           <th scope="col">First name:</th>
@@ -7,18 +7,29 @@
           <th scope="col">Phone:</th>
           <th scope="col">Email:</th>
           <th scope="col">Twitter:</th>
+          <th/>
         </tr>
       </thead>
-      <tbody>
-      <% @friends.each do |friend| %>
-      <tr id="<%= dom_id(friend) %>>
-        <td><%= friend.first_name %></td>
-        <td><%= friend.last_name %></td>
-        <td><%= friend.phone %></td>
-        <td><%= friend.email %></td>
-        <td><%= friend.twitter %></td>
-      </tr>
+      <% if @friends.present? %>
+        <tbody>
+          <% @friends.each do |friend| %>
+            <tr id="<%= dom_id(friend) %>">
+              <td><%= friend.first_name %></td>
+              <td><%= friend.last_name %></td>
+              <td><%= friend.phone %></td>
+              <td><%= friend.email %></td>
+              <td><%= friend.twitter %></td>
+              <td><%= link_to "Show", friend %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      <% else %>
+        <tbody>
+          <tr>
+            <td colspan="6">No friends found.</td>
+          </tr>
+        </tbody>
       <% end %>
-    </tbody>
+    
   </table>
 </div>

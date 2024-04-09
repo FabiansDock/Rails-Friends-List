@@ -10,33 +10,38 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
+  <table class="table table-striped">
+  <tbody>
+    <tr>
+  <td>
     <%= form.label :first_name, style: "display: block" %>
     <%= form.text_field :first_name %>
-  </div>
+  </td>
 
-  <div>
+  <td>
     <%= form.label :last_name, style: "display: block" %>
     <%= form.text_field :last_name %>
-  </div>
+  </td>
 
-  <div>
+  <td>
     <%= form.label :phone, style: "display: block" %>
     <%= form.text_field :phone %>
-  </div>
+  </td>
 
-  <div>
+  <td>
     <%= form.label :email, style: "display: block" %>
     <%= form.text_field :email %>
-  </div>
+  </td>
 
-  <div>
+  <td>
     <%= form.label :twitter, style: "display: block" %>
     <%= form.text_field :twitter %>
-  </div>
-
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <br/>
   <div>
-    <%= form.submit %>
+    <%= form.button :update, class: "btn btn-warning" %>
   </div>
 <% end %>
